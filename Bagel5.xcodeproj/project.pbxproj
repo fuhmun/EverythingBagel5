@@ -16,6 +16,7 @@
 		165C17252B597856004F3DAF /* Bagel5UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17242B597856004F3DAF /* Bagel5UITestsLaunchTests.swift */; };
 		165C17452B5EB323004F3DAF /* OpenAIFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17442B5EB323004F3DAF /* OpenAIFile.swift */; };
 		165C17472B5EBA70004F3DAF /* SecretAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17462B5EBA70004F3DAF /* SecretAPI.swift */; };
+		165C175C2B62A881004F3DAF /* FavoritesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C175B2B62A881004F3DAF /* FavoritesPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		165C17242B597856004F3DAF /* Bagel5UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bagel5UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		165C17442B5EB323004F3DAF /* OpenAIFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIFile.swift; sourceTree = "<group>"; };
 		165C17462B5EBA70004F3DAF /* SecretAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretAPI.swift; sourceTree = "<group>"; };
+		165C175B2B62A881004F3DAF /* FavoritesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				165C17062B597855004F3DAF /* Bagel5App.swift */,
 				165C17082B597855004F3DAF /* ContentView.swift */,
 				165C17442B5EB323004F3DAF /* OpenAIFile.swift */,
+				165C175B2B62A881004F3DAF /* FavoritesPage.swift */,
 				165C17462B5EBA70004F3DAF /* SecretAPI.swift */,
 				165C170A2B597856004F3DAF /* Assets.xcassets */,
 				165C170C2B597856004F3DAF /* Bagel5.entitlements */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				165C17452B5EB323004F3DAF /* OpenAIFile.swift in Sources */,
+				165C175C2B62A881004F3DAF /* FavoritesPage.swift in Sources */,
 				165C17092B597855004F3DAF /* ContentView.swift in Sources */,
 				165C17472B5EBA70004F3DAF /* SecretAPI.swift in Sources */,
 				165C17072B597855004F3DAF /* Bagel5App.swift in Sources */,
