@@ -1,0 +1,630 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		165C17072B597855004F3DAF /* Bagel5App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17062B597855004F3DAF /* Bagel5App.swift */; };
+		165C17092B597855004F3DAF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17082B597855004F3DAF /* ContentView.swift */; };
+		165C170B2B597856004F3DAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165C170A2B597856004F3DAF /* Assets.xcassets */; };
+		165C170F2B597856004F3DAF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165C170E2B597856004F3DAF /* Preview Assets.xcassets */; };
+		165C17192B597856004F3DAF /* Bagel5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17182B597856004F3DAF /* Bagel5Tests.swift */; };
+		165C17232B597856004F3DAF /* Bagel5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17222B597856004F3DAF /* Bagel5UITests.swift */; };
+		165C17252B597856004F3DAF /* Bagel5UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17242B597856004F3DAF /* Bagel5UITestsLaunchTests.swift */; };
+		165C17452B5EB323004F3DAF /* OpenAIFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17442B5EB323004F3DAF /* OpenAIFile.swift */; };
+		165C17472B5EBA70004F3DAF /* SecretAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17462B5EBA70004F3DAF /* SecretAPI.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		165C17152B597856004F3DAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 165C16FB2B597855004F3DAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 165C17022B597855004F3DAF;
+			remoteInfo = Bagel5;
+		};
+		165C171F2B597856004F3DAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 165C16FB2B597855004F3DAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 165C17022B597855004F3DAF;
+			remoteInfo = Bagel5;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		165C17032B597855004F3DAF /* Bagel5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bagel5.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		165C17062B597855004F3DAF /* Bagel5App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bagel5App.swift; sourceTree = "<group>"; };
+		165C17082B597855004F3DAF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		165C170A2B597856004F3DAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		165C170C2B597856004F3DAF /* Bagel5.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bagel5.entitlements; sourceTree = "<group>"; };
+		165C170E2B597856004F3DAF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		165C17142B597856004F3DAF /* Bagel5Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bagel5Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		165C17182B597856004F3DAF /* Bagel5Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bagel5Tests.swift; sourceTree = "<group>"; };
+		165C171E2B597856004F3DAF /* Bagel5UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bagel5UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		165C17222B597856004F3DAF /* Bagel5UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bagel5UITests.swift; sourceTree = "<group>"; };
+		165C17242B597856004F3DAF /* Bagel5UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bagel5UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		165C17442B5EB323004F3DAF /* OpenAIFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIFile.swift; sourceTree = "<group>"; };
+		165C17462B5EBA70004F3DAF /* SecretAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretAPI.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		165C17002B597855004F3DAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		165C17112B597856004F3DAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		165C171B2B597856004F3DAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		165C16FA2B597855004F3DAF = {
+			isa = PBXGroup;
+			children = (
+				165C17052B597855004F3DAF /* Bagel5 */,
+				165C17172B597856004F3DAF /* Bagel5Tests */,
+				165C17212B597856004F3DAF /* Bagel5UITests */,
+				165C17042B597855004F3DAF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		165C17042B597855004F3DAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				165C17032B597855004F3DAF /* Bagel5.app */,
+				165C17142B597856004F3DAF /* Bagel5Tests.xctest */,
+				165C171E2B597856004F3DAF /* Bagel5UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		165C17052B597855004F3DAF /* Bagel5 */ = {
+			isa = PBXGroup;
+			children = (
+				165C17062B597855004F3DAF /* Bagel5App.swift */,
+				165C17082B597855004F3DAF /* ContentView.swift */,
+				165C17442B5EB323004F3DAF /* OpenAIFile.swift */,
+				165C17462B5EBA70004F3DAF /* SecretAPI.swift */,
+				165C170A2B597856004F3DAF /* Assets.xcassets */,
+				165C170C2B597856004F3DAF /* Bagel5.entitlements */,
+				165C170D2B597856004F3DAF /* Preview Content */,
+			);
+			path = Bagel5;
+			sourceTree = "<group>";
+		};
+		165C170D2B597856004F3DAF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				165C170E2B597856004F3DAF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		165C17172B597856004F3DAF /* Bagel5Tests */ = {
+			isa = PBXGroup;
+			children = (
+				165C17182B597856004F3DAF /* Bagel5Tests.swift */,
+			);
+			path = Bagel5Tests;
+			sourceTree = "<group>";
+		};
+		165C17212B597856004F3DAF /* Bagel5UITests */ = {
+			isa = PBXGroup;
+			children = (
+				165C17222B597856004F3DAF /* Bagel5UITests.swift */,
+				165C17242B597856004F3DAF /* Bagel5UITestsLaunchTests.swift */,
+			);
+			path = Bagel5UITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		165C17022B597855004F3DAF /* Bagel5 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 165C17282B597856004F3DAF /* Build configuration list for PBXNativeTarget "Bagel5" */;
+			buildPhases = (
+				165C16FF2B597855004F3DAF /* Sources */,
+				165C17002B597855004F3DAF /* Frameworks */,
+				165C17012B597855004F3DAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bagel5;
+			productName = Bagel5;
+			productReference = 165C17032B597855004F3DAF /* Bagel5.app */;
+			productType = "com.apple.product-type.application";
+		};
+		165C17132B597856004F3DAF /* Bagel5Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 165C172B2B597856004F3DAF /* Build configuration list for PBXNativeTarget "Bagel5Tests" */;
+			buildPhases = (
+				165C17102B597856004F3DAF /* Sources */,
+				165C17112B597856004F3DAF /* Frameworks */,
+				165C17122B597856004F3DAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				165C17162B597856004F3DAF /* PBXTargetDependency */,
+			);
+			name = Bagel5Tests;
+			productName = Bagel5Tests;
+			productReference = 165C17142B597856004F3DAF /* Bagel5Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		165C171D2B597856004F3DAF /* Bagel5UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 165C172E2B597856004F3DAF /* Build configuration list for PBXNativeTarget "Bagel5UITests" */;
+			buildPhases = (
+				165C171A2B597856004F3DAF /* Sources */,
+				165C171B2B597856004F3DAF /* Frameworks */,
+				165C171C2B597856004F3DAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				165C17202B597856004F3DAF /* PBXTargetDependency */,
+			);
+			name = Bagel5UITests;
+			productName = Bagel5UITests;
+			productReference = 165C171E2B597856004F3DAF /* Bagel5UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		165C16FB2B597855004F3DAF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					165C17022B597855004F3DAF = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					165C17132B597856004F3DAF = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 165C17022B597855004F3DAF;
+					};
+					165C171D2B597856004F3DAF = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 165C17022B597855004F3DAF;
+					};
+				};
+			};
+			buildConfigurationList = 165C16FE2B597855004F3DAF /* Build configuration list for PBXProject "Bagel5" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 165C16FA2B597855004F3DAF;
+			productRefGroup = 165C17042B597855004F3DAF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				165C17022B597855004F3DAF /* Bagel5 */,
+				165C17132B597856004F3DAF /* Bagel5Tests */,
+				165C171D2B597856004F3DAF /* Bagel5UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		165C17012B597855004F3DAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				165C170F2B597856004F3DAF /* Preview Assets.xcassets in Resources */,
+				165C170B2B597856004F3DAF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		165C17122B597856004F3DAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		165C171C2B597856004F3DAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		165C16FF2B597855004F3DAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				165C17452B5EB323004F3DAF /* OpenAIFile.swift in Sources */,
+				165C17092B597855004F3DAF /* ContentView.swift in Sources */,
+				165C17472B5EBA70004F3DAF /* SecretAPI.swift in Sources */,
+				165C17072B597855004F3DAF /* Bagel5App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		165C17102B597856004F3DAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				165C17192B597856004F3DAF /* Bagel5Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		165C171A2B597856004F3DAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				165C17252B597856004F3DAF /* Bagel5UITestsLaunchTests.swift in Sources */,
+				165C17232B597856004F3DAF /* Bagel5UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		165C17162B597856004F3DAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 165C17022B597855004F3DAF /* Bagel5 */;
+			targetProxy = 165C17152B597856004F3DAF /* PBXContainerItemProxy */;
+		};
+		165C17202B597856004F3DAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 165C17022B597855004F3DAF /* Bagel5 */;
+			targetProxy = 165C171F2B597856004F3DAF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		165C17262B597856004F3DAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		165C17272B597856004F3DAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		165C17292B597856004F3DAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Bagel5/Bagel5.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Bagel5/Preview Content\"";
+				DEVELOPMENT_TEAM = 87YLKK29V4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-fahadmunawar.Bagel5";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		165C172A2B597856004F3DAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Bagel5/Bagel5.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Bagel5/Preview Content\"";
+				DEVELOPMENT_TEAM = 87YLKK29V4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-fahadmunawar.Bagel5";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		165C172C2B597856004F3DAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87YLKK29V4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-fahadmunawar.Bagel5Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bagel5.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Bagel5";
+			};
+			name = Debug;
+		};
+		165C172D2B597856004F3DAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87YLKK29V4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-fahadmunawar.Bagel5Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bagel5.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Bagel5";
+			};
+			name = Release;
+		};
+		165C172F2B597856004F3DAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87YLKK29V4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-fahadmunawar.Bagel5UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Bagel5;
+			};
+			name = Debug;
+		};
+		165C17302B597856004F3DAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87YLKK29V4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-fahadmunawar.Bagel5UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Bagel5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		165C16FE2B597855004F3DAF /* Build configuration list for PBXProject "Bagel5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				165C17262B597856004F3DAF /* Debug */,
+				165C17272B597856004F3DAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		165C17282B597856004F3DAF /* Build configuration list for PBXNativeTarget "Bagel5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				165C17292B597856004F3DAF /* Debug */,
+				165C172A2B597856004F3DAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		165C172B2B597856004F3DAF /* Build configuration list for PBXNativeTarget "Bagel5Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				165C172C2B597856004F3DAF /* Debug */,
+				165C172D2B597856004F3DAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		165C172E2B597856004F3DAF /* Build configuration list for PBXNativeTarget "Bagel5UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				165C172F2B597856004F3DAF /* Debug */,
+				165C17302B597856004F3DAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 165C16FB2B597855004F3DAF /* Project object */;
+}
