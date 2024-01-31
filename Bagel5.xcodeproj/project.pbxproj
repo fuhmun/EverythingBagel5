@@ -17,6 +17,7 @@
 		165C17452B5EB323004F3DAF /* OpenAIFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17442B5EB323004F3DAF /* OpenAIFile.swift */; };
 		165C17472B5EBA70004F3DAF /* SecretAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17462B5EBA70004F3DAF /* SecretAPI.swift */; };
 		165C175C2B62A881004F3DAF /* FavoritesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C175B2B62A881004F3DAF /* FavoritesPage.swift */; };
+		CCB3ABE12B62C4B400ECCB76 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3ABE02B62C4B400ECCB76 /* PantryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		165C17442B5EB323004F3DAF /* OpenAIFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIFile.swift; sourceTree = "<group>"; };
 		165C17462B5EBA70004F3DAF /* SecretAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretAPI.swift; sourceTree = "<group>"; };
 		165C175B2B62A881004F3DAF /* FavoritesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPage.swift; sourceTree = "<group>"; };
+		CCB3ABE02B62C4B400ECCB76 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				165C17062B597855004F3DAF /* Bagel5App.swift */,
+				CCB3ABE02B62C4B400ECCB76 /* PantryView.swift */,
 				165C17082B597855004F3DAF /* ContentView.swift */,
 				165C17442B5EB323004F3DAF /* OpenAIFile.swift */,
 				165C175B2B62A881004F3DAF /* FavoritesPage.swift */,
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCB3ABE12B62C4B400ECCB76 /* PantryView.swift in Sources */,
 				165C17452B5EB323004F3DAF /* OpenAIFile.swift in Sources */,
 				165C175C2B62A881004F3DAF /* FavoritesPage.swift in Sources */,
 				165C17092B597855004F3DAF /* ContentView.swift in Sources */,
@@ -432,7 +436,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bagel5/Preview Content\"";
-				DEVELOPMENT_TEAM = 87YLKK29V4;
+				DEVELOPMENT_TEAM = C46QVW4ALJ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -470,7 +474,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bagel5/Preview Content\"";
-				DEVELOPMENT_TEAM = 87YLKK29V4;
+				DEVELOPMENT_TEAM = C46QVW4ALJ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
