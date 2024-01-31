@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Bagel5App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+ //           RecipeView()
+//            FavoritesPage()
         }
+        .modelContainer(for: Recipes.self)
     }
 }
