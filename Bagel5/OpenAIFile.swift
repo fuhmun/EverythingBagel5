@@ -31,20 +31,24 @@ class OpenAIService {
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.addValue("Bearer \(Secret.key)", forHTTPHeaderField: "Authorization")
         //Body
-        let systemMessage = GPTMessage(role: "system", content: "I want you to act as a recipe generator. I will provide you with a list of ingredients and you will suggest a unique recipe that can be created with them. You should also provide instructions on how to prepare the recipe, as well as nutritional information on each dish.")
+        let systemMessage = GPTMessage(role: "system", content: "I want you to act as a recipe generator. I will provide you with a list of ingredients and you will suggest a unique recipe that can be created with them. You should then provide a description of the ricipe followed by detailed and descriptive instructions that are numbered on how to prepare the recipe. Keep in mind that I have majority of seasonings and sauces that are within an average household. Number the instructions and be thorough with explaining them.")
         let userMessage = GPTMessage(role: "user", content: message)
         
         let ingredients = GPTFunctionProperty(type: "string", description: "The available ingredients are \(message)")
         let recipe = GPTFunctionProperty(type: "string", description: "The recommended recipe to make.")
+        let description = GPTFunctionProperty(type: "string", description: "Here is a detailed description of this recipe.")
         let instructions = GPTFunctionProperty(type: "string", description: "Here are detialed instructions for this recipe.")
-        
+        let timeToCook = GPTFunctionProperty(type: "string", description: "Here is how long it takes to cook this recipe in minutes.")
+
         let params: [String: GPTFunctionProperty] = [
             "ingredients": ingredients,
             "instructions": instructions,
-            "recipe": recipe
+            "recipe": recipe,
+            "timeToCook": timeToCook,
+            "description": description
         ]
         
-        let functionParam = GPTFunctionParam(type: "object", properties: params, required: ["ingredients", "recipe", "instructions"])
+        let functionParam = GPTFunctionParam(type: "object", properties: params, required: ["ingredients", "recipe", "instructions", "timeToCook", "description"])
         let function = GPTFunction(name: "get_recipe", description: "Get the recipe with the given ingredients", parameters: functionParam)
         let payload = GPTChatPayload(model: "gpt-3.5-turbo-0613", messages: [systemMessage, userMessage], functions: [function])
         
@@ -55,7 +59,7 @@ class OpenAIService {
         return urlRequest
     }
     
-    func sendPromptToChatGPT(message: String) async throws {
+    func sendPromptToChatGPT(message: String) async throws -> (String,String,String,String,String) {
         let urlRequest = try generateAIRequest(httpMethod: .post, message: message)
         
         let (data, _) = try await URLSession.shared.data(for: urlRequest)
@@ -65,23 +69,17 @@ class OpenAIService {
         guard let argData = args.data(using: .utf8) else {
             throw URLError(.badURL)
         }
-        let recipe = try JSONDecoder().decode(RecipeResponse.self, from: argData)
-        print(recipe)
-        //print(gptResponse)
-        //print(gptResponse.choices[0].message.functionCall)
-        //print(String(data: data, encoding: .utf8)!)
+        let response = try JSONDecoder().decode(RecipeResponse.self, from: argData)
+        
+                
+        return (response.instructions,response.ingredients,response.recipe, response.timeToCook, response.description)
         
     }
 }
 
 
-//ep1
-/*
- struct model:Codable {
-  let id
- let choices:
- 
- */
+//Encoding
+
 struct GPTChatPayload: Encodable {
     let model: String
     let messages: [GPTMessage]
@@ -108,7 +106,9 @@ struct GPTFunctionProperty: Encodable {
     let type: String
     let description: String
 }
-//ep2
+
+//Decoding
+
 struct GPTResponse: Decodable {
     let choices: [GPTCompletion]
 }
@@ -134,4 +134,6 @@ struct RecipeResponse: Decodable {
     let ingredients: String
     let recipe: String
     let instructions: String
+    let timeToCook: String
+    let description: String
 }
