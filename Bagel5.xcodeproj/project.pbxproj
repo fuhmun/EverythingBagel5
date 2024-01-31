@@ -18,7 +18,7 @@
 		165C17472B5EBA70004F3DAF /* SecretAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17462B5EBA70004F3DAF /* SecretAPI.swift */; };
 		165C175C2B62A881004F3DAF /* FavoritesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C175B2B62A881004F3DAF /* FavoritesPage.swift */; };
 		165C175E2B62B7E0004F3DAF /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C175D2B62B7E0004F3DAF /* RecipeView.swift */; };
-		691CF0382B6AB48400BE20FB /* RecipeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CF0372B6AB48400BE20FB /* RecipeItemView.swift */; };
+		691CF03A2B6AB5D900BE20FB /* RecipeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CF0392B6AB5D900BE20FB /* RecipeItemView.swift */; };
 		CC9AD2422B6A9B4800545D73 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AD2412B6A9B4800545D73 /* PantryView.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 		165C17462B5EBA70004F3DAF /* SecretAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretAPI.swift; sourceTree = "<group>"; };
 		165C175B2B62A881004F3DAF /* FavoritesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPage.swift; sourceTree = "<group>"; };
 		165C175D2B62B7E0004F3DAF /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
-		691CF0372B6AB48400BE20FB /* RecipeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItemView.swift; sourceTree = "<group>"; };
+		691CF0392B6AB5D900BE20FB /* RecipeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItemView.swift; sourceTree = "<group>"; };
 		CC9AD2412B6A9B4800545D73 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				165C17062B597855004F3DAF /* Bagel5App.swift */,
-				691CF0372B6AB48400BE20FB /* RecipeItemView.swift */,
+				691CF0392B6AB5D900BE20FB /* RecipeItemView.swift */,
 				165C17082B597855004F3DAF /* ContentView.swift */,
 				165C175D2B62B7E0004F3DAF /* RecipeView.swift */,
 				165C17442B5EB323004F3DAF /* OpenAIFile.swift */,
@@ -278,7 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				165C175E2B62B7E0004F3DAF /* RecipeView.swift in Sources */,
-				691CF0382B6AB48400BE20FB /* RecipeItemView.swift in Sources */,
+				691CF03A2B6AB5D900BE20FB /* RecipeItemView.swift in Sources */,
 				CC9AD2422B6A9B4800545D73 /* PantryView.swift in Sources */,
 				165C17452B5EB323004F3DAF /* OpenAIFile.swift in Sources */,
 				165C175C2B62A881004F3DAF /* FavoritesPage.swift in Sources */,

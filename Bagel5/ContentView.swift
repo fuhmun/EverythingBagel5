@@ -5,21 +5,6 @@
 //  Created by Fahad Munawar on 1/18/24.
 //
 
-import SwiftUI
-
-//
-//  ContentView.swift
-//  Bagel5
-//
-//  Created by Fahad Munawar on 1/18/24.
-//
-
-//
-//  File.swift
-//  Macro Tracker
-//
-//  Created by Lizmary Fernandez on 1/26/24.
-//
 
 import SwiftUI
 

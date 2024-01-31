@@ -117,3 +117,4 @@ struct RecipesItemView: View {
         
         RecipesItemView(lowCarb: .constant(""), balancedMeal: .constant(""), highProtein: .constant(""))
     }
+
