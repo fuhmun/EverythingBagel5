@@ -5,25 +5,9 @@
 //  Created by Fahad Munawar on 1/25/24.
 //
 
+import Foundation
 import SwiftUI
 import SwiftData
-
-@Model
-class Recipes {
-    var name: String
-    var time: String
-    //    var information: String
-    var ingredients: String
-    var instructions: String
-    
-    init(name: String = "", time: String = "", ingredients: String = "", instructions: String = "") {
-        self.name = name
-        self.time = time
-        //        self.information = information
-        self.ingredients = ingredients
-        self.instructions = instructions
-    }
-}
 
 struct CustomColor {
     static let background = Color("background")
@@ -32,24 +16,10 @@ struct CustomColor {
     static let darkGreen = Color("darkGreen")
 }
 
-//struct savedRecipe: Identifiable {
-//    var id = UUID()
-//    let items: String
-//    let times: Int
-//    
-//    static let sampleData = [
-//        savedRecipe(items: "Chicken Burrito", times: 15),
-//        savedRecipe(items: "Chicken and Rice", times: 20),
-//        savedRecipe(items: "Chicken Soup", times: 10)
-//    ]
-//}
-
 struct FavoritesPage: View {
     
-//    let recipes = savedRecipe.sampleData
-    
     @Environment(\.modelContext) var modelContext
-    @Query var savedRecipes: [Recipes]
+    @Query var savedRecipes: [Favorites]
     
     var body: some View {
         ZStack{
@@ -107,9 +77,9 @@ struct FavoritesPage: View {
     }
     
     func addSamples(){
-        let recipe1 = Recipes(name: "Chicken", time: "15", ingredients: "Blah", instructions: "Blah")
-        let recipe2 = Recipes(name: "Steak", time: "20", ingredients: "Blah", instructions: "Blah")
-        let recipe3 = Recipes(name: "Sushi", time: "15", ingredients: "Blah", instructions: "Blah")
+        let recipe1 = Favorites(name: "Chicken", time: "15", ingredients: "Blah", instructions: "Blah")
+        let recipe2 = Favorites(name: "Steak", time: "20", ingredients: "Blah", instructions: "Blah")
+        let recipe3 = Favorites(name: "Sushi", time: "15", ingredients: "Blah", instructions: "Blah")
         
         modelContext.insert(recipe1)
         modelContext.insert(recipe2)
