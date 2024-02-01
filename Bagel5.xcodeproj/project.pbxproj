@@ -19,6 +19,8 @@
 		165C175C2B62A881004F3DAF /* FavoritesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C175B2B62A881004F3DAF /* FavoritesPage.swift */; };
 		165C175E2B62B7E0004F3DAF /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C175D2B62B7E0004F3DAF /* RecipeView.swift */; };
 		CC9AD2422B6A9B4800545D73 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AD2412B6A9B4800545D73 /* PantryView.swift */; };
+		CC9AD2442B6AABFE00545D73 /* PantrySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AD2432B6AABFE00545D73 /* PantrySource.swift */; };
+		CC9AD2472B6BF24D00545D73 /* ingredients.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC9AD2462B6BF24D00545D73 /* ingredients.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,9 @@
 		165C175B2B62A881004F3DAF /* FavoritesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPage.swift; sourceTree = "<group>"; };
 		165C175D2B62B7E0004F3DAF /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		CC9AD2412B6A9B4800545D73 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
+		CC9AD2432B6AABFE00545D73 /* PantrySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantrySource.swift; sourceTree = "<group>"; };
+		CC9AD2462B6BF24D00545D73 /* ingredients.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ingredients.txt; path = ../../Downloads/ingredients.txt; sourceTree = "<group>"; };
+		CC9AD2482B6BF25A00545D73 /* ingredients.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ingredients.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +90,7 @@
 		165C16FA2B597855004F3DAF = {
 			isa = PBXGroup;
 			children = (
+				CC9AD2462B6BF24D00545D73 /* ingredients.txt */,
 				165C17052B597855004F3DAF /* Bagel5 */,
 				165C17172B597856004F3DAF /* Bagel5Tests */,
 				165C17212B597856004F3DAF /* Bagel5UITests */,
@@ -112,6 +118,8 @@
 				165C175B2B62A881004F3DAF /* FavoritesPage.swift */,
 				165C17462B5EBA70004F3DAF /* SecretAPI.swift */,
 				CC9AD2412B6A9B4800545D73 /* PantryView.swift */,
+				CC9AD2432B6AABFE00545D73 /* PantrySource.swift */,
+				CC9AD2482B6BF25A00545D73 /* ingredients.txt */,
 				165C170A2B597856004F3DAF /* Assets.xcassets */,
 				165C170C2B597856004F3DAF /* Bagel5.entitlements */,
 				165C170D2B597856004F3DAF /* Preview Content */,
@@ -248,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC9AD2472B6BF24D00545D73 /* ingredients.txt in Resources */,
 				165C170F2B597856004F3DAF /* Preview Assets.xcassets in Resources */,
 				165C170B2B597856004F3DAF /* Assets.xcassets in Resources */,
 			);
@@ -278,6 +287,7 @@
 				CC9AD2422B6A9B4800545D73 /* PantryView.swift in Sources */,
 				165C17452B5EB323004F3DAF /* OpenAIFile.swift in Sources */,
 				165C175C2B62A881004F3DAF /* FavoritesPage.swift in Sources */,
+				CC9AD2442B6AABFE00545D73 /* PantrySource.swift in Sources */,
 				165C17092B597855004F3DAF /* ContentView.swift in Sources */,
 				165C17472B5EBA70004F3DAF /* SecretAPI.swift in Sources */,
 				165C17072B597855004F3DAF /* Bagel5App.swift in Sources */,
