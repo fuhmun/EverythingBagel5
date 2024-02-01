@@ -31,7 +31,8 @@ class OpenAIService {
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.addValue("Bearer \(Secret.key)", forHTTPHeaderField: "Authorization")
         //Body
-        let systemMessage = GPTMessage(role: "system", content: "I want you to act as a recipe generator. I will provide you with a list of ingredients and you will suggest a unique recipe that can be created with them. You should then provide a description of the ricipe followed by detailed and descriptive instructions that are numbered on how to prepare the recipe. Keep in mind that I have majority of seasonings and sauces that are within an average household. Number the instructions and be thorough with explaining them.")
+        //system message being sent to chatgpt before
+        let systemMessage = GPTMessage(role: "system", content: "I want you to act as a recipe generator. I will provide you with a list of ingredients and you will suggest a unique recipe that can be created with them within 25 minutes. You should then provide a description of the ricipe followed by detailed and descriptive instructions that are numbered on how to prepare the recipe. Keep in mind that I have majority of seasonings and sauces that are within an average household. Number the instructions and be thorough with explaining them.")
         let userMessage = GPTMessage(role: "user", content: message)
         
         let ingredients = GPTFunctionProperty(type: "string", description: "The available ingredients are \(message)")
@@ -59,7 +60,7 @@ class OpenAIService {
         return urlRequest
     }
     
-    func sendPromptToChatGPT(message: String) async throws -> (String,String,String,String,String) {
+    func sendPromptToChatGPT(message: String) async throws -> (RecipeResponse) {
         let urlRequest = try generateAIRequest(httpMethod: .post, message: message)
         
         let (data, _) = try await URLSession.shared.data(for: urlRequest)
@@ -72,7 +73,7 @@ class OpenAIService {
         let response = try JSONDecoder().decode(RecipeResponse.self, from: argData)
         
                 
-        return (response.instructions,response.ingredients,response.recipe, response.timeToCook, response.description)
+        return (response)
         
     }
 }

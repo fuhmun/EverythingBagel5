@@ -10,15 +10,15 @@ import SwiftUI
 
 let mess = "chicken eggs cheese"
 
+var arrayOfRecipes: [RecipeResponse] = []
+
 struct RecipeView: View {
-    
     
     @State private var ingredients: String = ""
     @State private var recipe: String = ""
     @State private var instructions: String = ""
     @State private var timeToCook: String = ""
     @State private var description: String = ""
-    
     
     var body: some View {
         NavigationStack {
@@ -55,14 +55,16 @@ struct RecipeView: View {
                         VStack (alignment: .leading){
                             Spacer()
                             Divider()
-                            
-                            Text("Description\n\(description)")
+                            Text("Description")
+                                .font(.title2)
+                            Text(description)
                             
                             Spacer()
                             Divider()
                             
-                            Text("Ingredients\n")
-                            let components = ingredients.components(separatedBy: " ")
+                            Text("Ingredients")
+                                .font(.title2)
+                            let components = mess.components(separatedBy: " ")
                             HStack {
                                 ForEach(components, id: \.self) { ingre in
                                     Text(ingre)
@@ -72,14 +74,14 @@ struct RecipeView: View {
                                             RoundedRectangle(cornerRadius: 20)
                                                 .fill(.white)
                                         }
-                                    
                                 }
                             }
                             
                             Spacer()
                             Divider()
-                            Text("Instructions\n\(instructions)")
-                                .font(.subheadline)
+                            Text("Instructions")
+                                .font(.title2)
+                            Text(instructions)
                             
                             
                         }
@@ -90,14 +92,19 @@ struct RecipeView: View {
         }
         .task {
             do {
-                let (instructions, ingredients, recipe, timeToCook, description) = try await OpenAIService.shared.sendPromptToChatGPT(message: mess)
+//                let (instructions, ingredients, recipe, timeToCook, description) = try await OpenAIService.shared.sendPromptToChatGPT(message: mess)
+                for index in 0...2 {
+                    let result = try await OpenAIService.shared.sendPromptToChatGPT(message: mess)
+                    arrayOfRecipes.append(result)
+                    print(arrayOfRecipes[index])
+                }
                 
-                self.recipe = recipe
-                self.timeToCook = timeToCook
-                self.ingredients = ingredients
-                self.instructions = instructions
-                self.description = description
                 
+//                self.recipe = recipe
+//                self.timeToCook = timeToCook
+//                self.ingredients = ingredients
+//                self.instructions = instructions
+//                self.description = description                
             } catch {
                 print(error.localizedDescription)
             }
