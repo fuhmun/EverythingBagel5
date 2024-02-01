@@ -6,21 +6,6 @@
 //
 
 import Foundation
-
-
-//  RecipesItemView.swift
-//  Macro Tracker
-//
-//  Created by Lizmary Fernandez on 1/30/24.
-
-
-
-//  MacroItemView.swift
-//  Macro Tracker
-//
-//  Created by Lizmary Fernandez on 1/29/24.
-
-
 import SwiftUI
 
 struct RecipesItemView: View {

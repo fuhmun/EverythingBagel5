@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160217012B6BE76C0026308E /* ClassForRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160217002B6BE76C0026308E /* ClassForRecipe.swift */; };
 		165C17072B597855004F3DAF /* Bagel5App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17062B597855004F3DAF /* Bagel5App.swift */; };
 		165C17092B597855004F3DAF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17082B597855004F3DAF /* ContentView.swift */; };
 		165C170B2B597856004F3DAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165C170A2B597856004F3DAF /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		160217002B6BE76C0026308E /* ClassForRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassForRecipe.swift; sourceTree = "<group>"; };
 		165C17032B597855004F3DAF /* Bagel5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bagel5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		165C17062B597855004F3DAF /* Bagel5App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bagel5App.swift; sourceTree = "<group>"; };
 		165C17082B597855004F3DAF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				691CF0392B6AB5D900BE20FB /* RecipeItemView.swift */,
 				165C17082B597855004F3DAF /* ContentView.swift */,
 				165C175D2B62B7E0004F3DAF /* RecipeView.swift */,
+				160217002B6BE76C0026308E /* ClassForRecipe.swift */,
 				165C17442B5EB323004F3DAF /* OpenAIFile.swift */,
 				165C175B2B62A881004F3DAF /* FavoritesPage.swift */,
 				165C17462B5EBA70004F3DAF /* SecretAPI.swift */,
@@ -278,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				165C175E2B62B7E0004F3DAF /* RecipeView.swift in Sources */,
+				160217012B6BE76C0026308E /* ClassForRecipe.swift in Sources */,
 				691CF03A2B6AB5D900BE20FB /* RecipeItemView.swift in Sources */,
 				CC9AD2422B6A9B4800545D73 /* PantryView.swift in Sources */,
 				165C17452B5EB323004F3DAF /* OpenAIFile.swift in Sources */,
