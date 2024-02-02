@@ -6,62 +6,120 @@ import SwiftData
 
 struct PantryView: View {
     @State private var searchFill: String = ""
+    //   @State private var fulfill = false
     let ingredients = DataManager.loadIngredients()
-
-    var filteredIngredients: [Ingredient] {
+    
+    // var filteredIngredients: [Ingredient] {
+    //        if searchFill.isEmpty {
+    //            return ingredients
+    //        } else {
+    //
+    //            return ingredients.filter { $0.name.lowercased().contains(searchFill.lowercased()) }
+    //
+    //        }
+    //
+    //    }
+    
+    func filterName() {
         if searchFill.isEmpty {
-            return ingredients
+            filteredIngredients = originalIngredients
         } else {
-            return ingredients.filter { $0.name.lowercased().contains(searchFill.lowercased()) }
+            filteredIngredients = filteredIngredients.filter { $0.name.lowercased().contains(searchFill.lowercased()) }
         }
+        
+    }
+    init() {
+        filteredIngredients = ingredients
     }
     
+    @State var originalIngredients:[Ingredient] = []
+    @State var filteredIngredients: [Ingredient] = []
+        
     var body: some View {
-        VStack {
-            NavigationStack {
-                    ZStack {
-                        Color.green
-                            .ignoresSafeArea()
-                        
-                        HStack {
-                            Image(systemName: "chevron.backward")
-                            Text("Back")
-                        }
-                        .foregroundColor(.white)
-                        
-                        VStack {
-                            SearchBar(searchFill: $searchFill)
-                            .padding(.horizontal)                        }
+        
+        ZStack{
+            CustomColor.background
+                .ignoresSafeArea()
+            VStack {
+                ZStack {
+                    CustomColor.lightGreen
+                        .ignoresSafeArea()
+                    VStack {
+                        SearchBar(searchFill: $searchFill)
+                            .padding(.horizontal)
                     }
-                .frame(height: 150)
-                
-                Spacer()
-                
-                HStack {
+                }
+                .frame(height: 125)
+                HStack{
                     Text("Ingredients")
                         .fontWeight(.bold)
+                        .padding(.leading, 25)
+                    Spacer()
                 }
-                .padding()
-                
+                .padding(3)
+                .background(CustomColor.background)
                 VStack {
-                    
                     List(filteredIngredients) { ingredient in
-                        Text(ingredient.name)
+                        HStack {
+                            Text(ingredient.name)
+                            Spacer()
+                            Button {
+                                if let index = filteredIngredients.firstIndex(where: {$0.id == ingredient.id}) {
+                                    filteredIngredients[index].isSelected.toggle()
+                                    originalIngredients[index].isSelected.toggle()
+                                }
+                            } label : {
+                                RoundedRectangle(cornerRadius: 5)
+                                    .fill(ingredient.isSelected ? .green : .black)
+                                    .frame(width: 25, height: 25)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            //                            Spacer()
+                            //
+                            //                            Button {
+                            //
+                            //                                if let index = filteredIngredients.firstIndex(where: {$0.id == ingredient.id}) {
+                            //
+                            //
+                            //                                    filteredIngredients[index].isSelected.toggle()
+                            //
+                            //
+                            //                                }
+                            //                            } label : {
+                            //                                RoundedRectangle(cornerRadius: 5)
+                            //                                    .fill(ingredient.isSelected ? .green : .black)
+                            //                                            .frame(width: 25, height: 25)
+                            //
+                            //                            }
+                            //
+                            //                            .buttonStyle(PlainButtonStyle())
+                        }
+                        .listRowBackground(CustomColor.background)
                     }
+                    .scrollContentBackground(.hidden)
+                    .background(CustomColor.background.edgesIgnoringSafeArea(.all))
                 }
+                .background(CustomColor.background)
+            }
+            .onAppear {
+                filteredIngredients = ingredients
+                originalIngredients = ingredients
+            }
+            .onChange(of: searchFill) {
+                filterName()
             }
         }
     }
 }
 
 struct SearchBar: View {
+    
     @Binding var searchFill: String
     
     var body: some View {
         HStack {
             Image(systemName: "magnifyingglass")
                 .foregroundColor(.gray)
-            
             TextField("Search Ingredients", text: $searchFill)
                 .foregroundColor(.primary)
                 .autocapitalization(.none)
