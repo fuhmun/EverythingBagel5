@@ -86,6 +86,11 @@ struct FavoritesPage: View {
         modelContext.insert(recipe3)
     }
     
+//    func addRecipes() {
+//        let recipe = Favorites()
+//        modelContext.insert(recipe)
+//    }
+    
     func deleteRecipes(_ indexSet: IndexSet) {
         for index in indexSet {
             let recipe = savedRecipes[index]

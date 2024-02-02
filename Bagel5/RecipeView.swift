@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 let mess = "chicken eggs cheese"
 
@@ -20,6 +21,9 @@ struct RecipeView: View {
     @State private var timeToCook: String = ""
     @State private var description: String = ""
     
+    @Environment(\.modelContext) var modelContext
+    @Query var savedRecipes: [Favorites]
+    
     var body: some View {
         NavigationStack {
             ZStack{
@@ -28,8 +32,12 @@ struct RecipeView: View {
                 ScrollView(.vertical) {
                     VStack (alignment: .leading) {
                         VStack (alignment: .leading){
-                            
-                            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+
+                            Button(action: {
+                                let favFood = Favorites(name: recipe, time: timeToCook, information: description , ingredients: ingredients, instructions: instructions)
+                                modelContext.insert(favFood)
+                                
+                            }, label: {
                                 Image(systemName: "bookmark")
                                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
                                     .padding()
@@ -92,7 +100,7 @@ struct RecipeView: View {
         }
         .task {
             do {
-//                let (instructions, ingredients, recipe, timeToCook, description) = try await OpenAIService.shared.sendPromptToChatGPT(message: mess)
+                //                let (instructions, ingredients, recipe, timeToCook, description) = try await OpenAIService.shared.sendPromptToChatGPT(message: mess)
                 for index in 0...2 {
                     let result = try await OpenAIService.shared.sendPromptToChatGPT(message: mess)
                     arrayOfRecipes.append(result)
@@ -100,16 +108,29 @@ struct RecipeView: View {
                 }
                 
                 
-//                self.recipe = recipe
-//                self.timeToCook = timeToCook
-//                self.ingredients = ingredients
-//                self.instructions = instructions
-//                self.description = description                
+                //                self.recipe = recipe
+                //                self.timeToCook = timeToCook
+                //                self.ingredients = ingredients
+                //                self.instructions = instructions
+                //                self.description = description                
             } catch {
                 print(error.localizedDescription)
             }
         }
     }
+    
+    func addRecipes() {
+        let recipe = Favorites()
+        modelContext.insert(recipe)
+    }
+    
+    func deleteRecipes(_ indexSet: IndexSet) {
+        for index in indexSet {
+            let recipe = savedRecipes[index]
+            modelContext.delete(recipe)
+        }
+    }
+    
 }
 
 #Preview {
