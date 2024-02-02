@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		160217012B6BE76C0026308E /* ClassForRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160217002B6BE76C0026308E /* ClassForRecipe.swift */; };
 		160217062B6D21670026308E /* ingredients.txt in Resources */ = {isa = PBXBuildFile; fileRef = 160217052B6D21670026308E /* ingredients.txt */; };
-		160217082B6D37E20026308E /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160217072B6D37E20026308E /* ContentView2.swift */; };
+		1602170C2B6D39910026308E /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602170B2B6D39910026308E /* ContentView2.swift */; };
 		165C17072B597855004F3DAF /* Bagel5App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17062B597855004F3DAF /* Bagel5App.swift */; };
 		165C17092B597855004F3DAF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17082B597855004F3DAF /* ContentView.swift */; };
 		165C170B2B597856004F3DAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165C170A2B597856004F3DAF /* Assets.xcassets */; };
@@ -48,7 +48,7 @@
 		160217002B6BE76C0026308E /* ClassForRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassForRecipe.swift; sourceTree = "<group>"; };
 		160217032B6BFE3D0026308E /* Bagel5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Bagel5; sourceTree = "<group>"; };
 		160217052B6D21670026308E /* ingredients.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ingredients.txt; path = ../../../Downloads/ingredients.txt; sourceTree = "<group>"; };
-		160217072B6D37E20026308E /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
+		1602170B2B6D39910026308E /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		165C17032B597855004F3DAF /* Bagel5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bagel5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		165C17062B597855004F3DAF /* Bagel5App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bagel5App.swift; sourceTree = "<group>"; };
 		165C17082B597855004F3DAF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -123,8 +123,8 @@
 				200F30902B6BCE6900FEEE3E /* Favorites.swift */,
 				691CF0392B6AB5D900BE20FB /* RecipeItemView.swift */,
 				165C17082B597855004F3DAF /* ContentView.swift */,
-				160217072B6D37E20026308E /* ContentView2.swift */,
 				165C175D2B62B7E0004F3DAF /* RecipeView.swift */,
+				1602170B2B6D39910026308E /* ContentView2.swift */,
 				160217002B6BE76C0026308E /* ClassForRecipe.swift */,
 				165C17442B5EB323004F3DAF /* OpenAIFile.swift */,
 				165C175B2B62A881004F3DAF /* FavoritesPage.swift */,
@@ -304,7 +304,7 @@
 				CC9AD2442B6AABFE00545D73 /* PantrySource.swift in Sources */,
 				165C17092B597855004F3DAF /* ContentView.swift in Sources */,
 				165C17472B5EBA70004F3DAF /* SecretAPI.swift in Sources */,
-				160217082B6D37E20026308E /* ContentView2.swift in Sources */,
+				1602170C2B6D39910026308E /* ContentView2.swift in Sources */,
 				200F30912B6BCE6900FEEE3E /* Favorites.swift in Sources */,
 				165C17072B597855004F3DAF /* Bagel5App.swift in Sources */,
 			);

@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ContentView2.swift
 //  Bagel5
 //
 //  Created by Fahad Munawar on 1/18/24.
@@ -8,8 +8,6 @@
 
 import SwiftUI
 
-//struct MacroView: View {
-//
 struct ContentView2: View {
     
     var body: some View {
