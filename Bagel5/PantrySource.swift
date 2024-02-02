@@ -7,10 +7,14 @@
 import SwiftUI
 import Foundation
 
+ 
+
 struct Ingredient: Identifiable {
     var id = UUID()
     var name: String
+    var isSelected = false
 }
+
 
 class DataManager {
     static func loadIngredients() -> [Ingredient] {
