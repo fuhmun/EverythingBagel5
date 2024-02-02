@@ -17,6 +17,7 @@ struct Bagel5App: App {
             RecipeView()
 //            FavoritesPage()
         }
-        .modelContainer(for: Favorites.self)
+        .modelContainer(for: [Favorites.self,Ingredients.self])
+//        .modelContainer(for: Ingredients.self)
     }
 }
