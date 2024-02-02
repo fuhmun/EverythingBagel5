@@ -13,8 +13,8 @@ import SwiftData
 struct Bagel5App: App {
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            RecipeView()
+            ContentView()
+//            RecipeView()
 //            FavoritesPage()
         }
         .modelContainer(for: [Favorites.self,Ingredients.self])
