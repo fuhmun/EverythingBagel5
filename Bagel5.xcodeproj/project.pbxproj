@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		160217012B6BE76C0026308E /* ClassForRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160217002B6BE76C0026308E /* ClassForRecipe.swift */; };
+		160217062B6D21670026308E /* ingredients.txt in Resources */ = {isa = PBXBuildFile; fileRef = 160217052B6D21670026308E /* ingredients.txt */; };
+		160217082B6D37E20026308E /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160217072B6D37E20026308E /* ContentView2.swift */; };
 		165C17072B597855004F3DAF /* Bagel5App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17062B597855004F3DAF /* Bagel5App.swift */; };
 		165C17092B597855004F3DAF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165C17082B597855004F3DAF /* ContentView.swift */; };
 		165C170B2B597856004F3DAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165C170A2B597856004F3DAF /* Assets.xcassets */; };
@@ -23,7 +25,6 @@
 		691CF03A2B6AB5D900BE20FB /* RecipeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CF0392B6AB5D900BE20FB /* RecipeItemView.swift */; };
 		CC9AD2422B6A9B4800545D73 /* PantryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AD2412B6A9B4800545D73 /* PantryView.swift */; };
 		CC9AD2442B6AABFE00545D73 /* PantrySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AD2432B6AABFE00545D73 /* PantrySource.swift */; };
-		CC9AD2472B6BF24D00545D73 /* ingredients.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC9AD2462B6BF24D00545D73 /* ingredients.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,9 @@
 
 /* Begin PBXFileReference section */
 		160217002B6BE76C0026308E /* ClassForRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassForRecipe.swift; sourceTree = "<group>"; };
+		160217032B6BFE3D0026308E /* Bagel5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Bagel5; sourceTree = "<group>"; };
+		160217052B6D21670026308E /* ingredients.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ingredients.txt; path = ../../../Downloads/ingredients.txt; sourceTree = "<group>"; };
+		160217072B6D37E20026308E /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		165C17032B597855004F3DAF /* Bagel5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bagel5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		165C17062B597855004F3DAF /* Bagel5App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bagel5App.swift; sourceTree = "<group>"; };
 		165C17082B597855004F3DAF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,8 +68,6 @@
 		691CF0392B6AB5D900BE20FB /* RecipeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItemView.swift; sourceTree = "<group>"; };
 		CC9AD2412B6A9B4800545D73 /* PantryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryView.swift; sourceTree = "<group>"; };
 		CC9AD2432B6AABFE00545D73 /* PantrySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantrySource.swift; sourceTree = "<group>"; };
-		CC9AD2462B6BF24D00545D73 /* ingredients.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ingredients.txt; path = ../../Downloads/ingredients.txt; sourceTree = "<group>"; };
-		CC9AD2482B6BF25A00545D73 /* ingredients.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ingredients.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +98,8 @@
 		165C16FA2B597855004F3DAF = {
 			isa = PBXGroup;
 			children = (
-				CC9AD2462B6BF24D00545D73 /* ingredients.txt */,
 				165C17052B597855004F3DAF /* Bagel5 */,
+				160217032B6BFE3D0026308E /* Bagel5 */,
 				165C17172B597856004F3DAF /* Bagel5Tests */,
 				165C17212B597856004F3DAF /* Bagel5UITests */,
 				165C17042B597855004F3DAF /* Products */,
@@ -121,6 +123,7 @@
 				200F30902B6BCE6900FEEE3E /* Favorites.swift */,
 				691CF0392B6AB5D900BE20FB /* RecipeItemView.swift */,
 				165C17082B597855004F3DAF /* ContentView.swift */,
+				160217072B6D37E20026308E /* ContentView2.swift */,
 				165C175D2B62B7E0004F3DAF /* RecipeView.swift */,
 				160217002B6BE76C0026308E /* ClassForRecipe.swift */,
 				165C17442B5EB323004F3DAF /* OpenAIFile.swift */,
@@ -128,7 +131,7 @@
 				165C17462B5EBA70004F3DAF /* SecretAPI.swift */,
 				CC9AD2412B6A9B4800545D73 /* PantryView.swift */,
 				CC9AD2432B6AABFE00545D73 /* PantrySource.swift */,
-				CC9AD2482B6BF25A00545D73 /* ingredients.txt */,
+				160217052B6D21670026308E /* ingredients.txt */,
 				165C170A2B597856004F3DAF /* Assets.xcassets */,
 				165C170C2B597856004F3DAF /* Bagel5.entitlements */,
 				165C170D2B597856004F3DAF /* Preview Content */,
@@ -265,7 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC9AD2472B6BF24D00545D73 /* ingredients.txt in Resources */,
+				160217062B6D21670026308E /* ingredients.txt in Resources */,
 				165C170F2B597856004F3DAF /* Preview Assets.xcassets in Resources */,
 				165C170B2B597856004F3DAF /* Assets.xcassets in Resources */,
 			);
@@ -301,6 +304,7 @@
 				CC9AD2442B6AABFE00545D73 /* PantrySource.swift in Sources */,
 				165C17092B597855004F3DAF /* ContentView.swift in Sources */,
 				165C17472B5EBA70004F3DAF /* SecretAPI.swift in Sources */,
+				160217082B6D37E20026308E /* ContentView2.swift in Sources */,
 				200F30912B6BCE6900FEEE3E /* Favorites.swift in Sources */,
 				165C17072B597855004F3DAF /* Bagel5App.swift in Sources */,
 			);
