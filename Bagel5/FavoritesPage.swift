@@ -9,13 +9,6 @@ import Foundation
 import SwiftUI
 import SwiftData
 
-struct CustomColor {
-    static let background = Color("background")
-    static let navyBlue = Color("navyBlue")
-    static let lightGreen = Color("lightGreen")
-    static let darkGreen = Color("darkGreen")
-}
-
 struct FavoritesPage: View {
     
     @Environment(\.modelContext) var modelContext
@@ -46,7 +39,7 @@ struct FavoritesPage: View {
                                         Text(recipe.name)
                                             .font(.custom("SF Pro", size: 25))
                                         Spacer()
-                                        VStack{
+                                        VStack {
                                             Text(recipe.time)
                                             Text("Min.")
                                         }
@@ -66,9 +59,9 @@ struct FavoritesPage: View {
                             .environment(\.defaultMinListRowHeight, 70)
                             .scrollContentBackground(.hidden)
                             .background(CustomColor.background.edgesIgnoringSafeArea(.all))
-                            .toolbar {
-                                Button("Add", action: addSamples)
-                            }
+//                            .toolbar {
+//                                Button("Add", action: addSamples)
+//                            }
                         }
                     }
                 }
@@ -76,15 +69,15 @@ struct FavoritesPage: View {
         }
     }
     
-    func addSamples(){
-        let recipe1 = Favorites(name: "Chicken", time: "15", ingredients: "Blah", instructions: "Blah")
-        let recipe2 = Favorites(name: "Steak", time: "20", ingredients: "Blah", instructions: "Blah")
-        let recipe3 = Favorites(name: "Sushi", time: "15", ingredients: "Blah", instructions: "Blah")
-        
-        modelContext.insert(recipe1)
-        modelContext.insert(recipe2)
-        modelContext.insert(recipe3)
-    }
+//    func addSamples(){
+//        let recipe1 = Favorites(name: "Chicken", time: "15", ingredients: "Blah", instructions: "Blah")
+//        let recipe2 = Favorites(name: "Steak", time: "20", ingredients: "Blah", instructions: "Blah")
+//        let recipe3 = Favorites(name: "Sushi", time: "15", ingredients: "Blah", instructions: "Blah")
+//        
+//        modelContext.insert(recipe1)
+//        modelContext.insert(recipe2)
+//        modelContext.insert(recipe3)
+//    }
     
 //    func addRecipes() {
 //        let recipe = Favorites()
@@ -97,7 +90,6 @@ struct FavoritesPage: View {
             modelContext.delete(recipe)
         }
     }
-    
 }
 
 

@@ -7,8 +7,12 @@
 
 
 import SwiftUI
+import SwiftData
 
 struct ContentView2: View {
+    
+    @Environment(\.modelContext) var modelContext
+    @Query(sort: \Ingredients.name) var selectedIngredients: [Ingredients]
     
     var body: some View {
         NavigationView {

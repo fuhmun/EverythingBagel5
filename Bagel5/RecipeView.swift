@@ -8,12 +8,13 @@
 import Foundation
 import SwiftUI
 import SwiftData
+import CoreData
 
-let mess = "chicken eggs cheese"
-
-var arrayOfRecipes: [RecipeResponse] = []
+var arrayOfRecipes2: [RecipeResponse] = []
 
 struct RecipeView: View {
+    
+    @State private var bookmarkTog = false
     
     @State private var ingredients: String = ""
     @State private var recipe: String = ""
@@ -24,89 +25,87 @@ struct RecipeView: View {
     @Environment(\.modelContext) var modelContext
     @Query var savedRecipes: [Favorites]
     
+    
     var body: some View {
-        NavigationStack {
+//        NavigationStack {
             ZStack{
                 Color(CustomColor.background)
                     .ignoresSafeArea()
-                ScrollView(.vertical) {
-                    VStack (alignment: .leading) {
-                        VStack (alignment: .leading){
-
-                            Button(action: {
-                                let favFood = Favorites(name: recipe, time: timeToCook, information: description , ingredients: ingredients, instructions: instructions)
-                                modelContext.insert(favFood)
-                                
-                            }, label: {
-                                Image(systemName: "bookmark")
-                                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
-                                    .padding()
-                                    .foregroundColor(.white)
-                            })
-                            Text(recipe)
-                                .font(.largeTitle)
-                                .foregroundColor(.white)
-                            
-                            Spacer()
-                            
-                            Text("Time\n\(timeToCook)")
-                                .font(.subheadline)
-                                .foregroundColor(.white)
-                            
-                        }
-                        .padding()
-                        .background {
-                            Color(CustomColor.lightGreen)
-                                .ignoresSafeArea()
-                        }
-                        
-                        VStack (alignment: .leading){
-                            Spacer()
-                            Divider()
-                            Text("Description")
-                                .font(.title2)
-                            Text(description)
-                            
-                            Spacer()
-                            Divider()
-                            
-                            Text("Ingredients")
-                                .font(.title2)
-                            let components = mess.components(separatedBy: " ")
-                            HStack {
-                                ForEach(components, id: \.self) { ingre in
-                                    Text(ingre)
-                                        .multilineTextAlignment(.leading)
-                                        .padding()
-                                        .background {
-                                            RoundedRectangle(cornerRadius: 20)
-                                                .fill(.white)
+                GeometryReader { geoProx in
+                    ScrollView(.vertical) {
+                        VStack (alignment: .leading) {
+                            VStack (alignment: .leading){
+                                Button(action: {
+                                        bookmarkTog.toggle()
+                                        if bookmarkTog{
+                                            let favRecipes = Favorites(name: recipe, time: timeToCook, information: description , ingredients: ingredients, instructions: instructions)
+                                            modelContext.insert(favRecipes)
+                                        } else {
+//                                            let delRecipes = Favorites(name: recipe, time: timeToCook, information: description , ingredients: ingredients, instructions: instructions)
+//                                            modelContext.delete(delRecipes)
                                         }
-                                }
+                                }, label: {
+                                    Image(systemName: bookmarkTog ?  "bookmark.fill" : "bookmark")
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+                                        .padding()
+                                        .foregroundColor(.white)
+                                })
+                                Text(recipe)
+                                    .font(.largeTitle)
+                                    .foregroundColor(.white)
+                                Spacer()
+                                Text("Time\n\(timeToCook)")
+                                    .font(.subheadline)
+                                    .foregroundColor(.white)
                             }
-                            
-                            Spacer()
-                            Divider()
-                            Text("Instructions")
-                                .font(.title2)
-                            Text(instructions)
-                            
-                            
+                            .padding()
+                            .frame(width: geoProx.size.width,height: geoProx.size.height/5)
+                            .background(CustomColor.lightGreen)
+                            VStack (alignment: .leading){
+                                Spacer()
+                                Divider()
+                                Text("Description")
+                                    .font(.title2)
+                                Text(description)
+                                Spacer()
+                                Divider()
+                                Text("Ingredients")
+                                    .font(.title2)
+                                let components = mess.components(separatedBy: " ")
+                                HStack {
+                                    ForEach(components, id: \.self) { ingre in
+                                        Text(ingre)
+                                            .multilineTextAlignment(.leading)
+                                            .padding()
+                                            .overlay(
+                                                RoundedRectangle(cornerRadius: 10)
+                                                    .stroke(CustomColor.darkGreen, lineWidth: 2)
+                                            )
+                                    }
+                                    .background(.white)
+                                    .cornerRadius(10)
+                                }
+                                Spacer()
+                                Divider()
+                                Text("Instructions")
+                                    .font(.title2)
+                                Text(instructions)
+                            }
+                            .padding([.leading,.trailing])
                         }
                     }
-                    .padding()
+                    .ignoresSafeArea()
                 }
-            }
         }
+        
         .task {
             do {
                 //                let (instructions, ingredients, recipe, timeToCook, description) = try await OpenAIService.shared.sendPromptToChatGPT(message: mess)
                 for index in 0...2 {
                     let result = try await OpenAIService.shared.sendPromptToChatGPT(message: mess)
-                    arrayOfRecipes.append(result)
+                    arrayOfRecipes2.append(result)
                     print(arrayOfRecipes[index])
                 }
-                
                 
                 //                self.recipe = recipe
                 //                self.timeToCook = timeToCook

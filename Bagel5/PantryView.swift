@@ -9,16 +9,8 @@ struct PantryView: View {
     //   @State private var fulfill = false
     let ingredients = DataManager.loadIngredients()
     
-    // var filteredIngredients: [Ingredient] {
-    //        if searchFill.isEmpty {
-    //            return ingredients
-    //        } else {
-    //
-    //            return ingredients.filter { $0.name.lowercased().contains(searchFill.lowercased()) }
-    //
-    //        }
-    //
-    //    }
+    @Environment(\.modelContext) var modelContext
+    @Query(sort: \Ingredients.name) var selectedIngredients: [Ingredients]
     
     func filterName() {
         if searchFill.isEmpty {
@@ -26,7 +18,6 @@ struct PantryView: View {
         } else {
             filteredIngredients = filteredIngredients.filter { $0.name.lowercased().contains(searchFill.lowercased()) }
         }
-        
     }
     init() {
         filteredIngredients = ingredients
@@ -67,10 +58,21 @@ struct PantryView: View {
                                 if let index = filteredIngredients.firstIndex(where: {$0.id == ingredient.id}) {
                                     filteredIngredients[index].isSelected.toggle()
                                     originalIngredients[index].isSelected.toggle()
+                                    if originalIngredients[index].isSelected {
+                                        let selIngredients = Ingredients(name: filteredIngredients[index].name)
+                                        modelContext.insert(selIngredients)
+                                    } else {
+                                        let delIngredients = selectedIngredients[index]
+                                        modelContext.delete(delIngredients)
+                                    }
                                 }
                             } label : {
                                 RoundedRectangle(cornerRadius: 5)
-                                    .fill(ingredient.isSelected ? .green : .black)
+                                    .fill(ingredient.isSelected ? CustomColor.lightGreen : .clear)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 5)
+                                            .stroke(.black, lineWidth: 2)
+                                    )
                                     .frame(width: 25, height: 25)
                             }
                             .buttonStyle(PlainButtonStyle())
