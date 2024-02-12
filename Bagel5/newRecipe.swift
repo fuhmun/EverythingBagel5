@@ -16,8 +16,9 @@ var arrayOfRecipes: [Favorites] = []
 
 struct newRecipeView: View {
     
-    @State private var bookmarkTog = false
+    let recipeInfo: Recipes
     
+    @State private var bookmarkTog = false
     @State private var id = UUID()
     @State private var name: String = ""
     @State private var time: String = ""
@@ -140,27 +141,6 @@ struct newRecipeView: View {
                     .ignoresSafeArea()
                 }
         }
-        .task {
-            do {
-                for index in 0...0 {
-                    let result = try await OpenAIService.shared.sendPromptToChatGPT(message: mess)
-                    let recipe = Favorites(name: result.recipe, time: result.timeToCook, information: result.description, ingredients: result.ingredients, instructions: result.instructions, background: randomSlimIcon())
-                    arrayOfRecipes.append(recipe)
-                    
-                    id =  recipe.id
-                    name = recipe.name
-                    time = recipe.time
-                    information = recipe.information
-                    ingredients = recipe.ingredients
-                    instructions = recipe.instructions
-                    background = recipe.background
-
-                    print(arrayOfRecipes[index])
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
     }
     
 //    func addRecipes() {
@@ -176,6 +156,6 @@ struct newRecipeView: View {
 //    }
     
 }
-#Preview {
-    newRecipeView()
-}
+//#Preview {
+//    newRecipeView()
+//}

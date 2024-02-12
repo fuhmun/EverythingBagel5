@@ -72,7 +72,7 @@ struct newFavoritesPage: View {
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             GeometryReader { geoProx in
                 VStack{
-                    VStack {
+                    VStack{
                         HStack{
                             Text("Favorites")
                                 .foregroundColor(.white)
@@ -86,7 +86,6 @@ struct newFavoritesPage: View {
                             .fill(CustomColor.newBlue)
                         )
                         .ignoresSafeArea()
-                        
                     }
                     VStack{
                         //                            NavigationStack {
