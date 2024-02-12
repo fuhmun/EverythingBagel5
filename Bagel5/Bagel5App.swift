@@ -15,8 +15,9 @@ struct Bagel5App: App {
         WindowGroup {
 //            ContentView()
 //            RecipeView()
-            newFavoritesPage()
+//            newFavoritesPage()
 //            newRecipeView()
+            newHome()
         }
         .modelContainer(for: [Favorites.self,Ingredients.self])
 //        .modelContainer(for: Ingredients.self)
