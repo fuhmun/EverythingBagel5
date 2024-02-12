@@ -65,7 +65,6 @@ struct newFavoritesPage: View {
     @Query var savedRecipes: [Favorites]
     
     var body: some View {
-        
         ZStack {
             Image("foodBackground")
                 .resizable()
@@ -73,78 +72,83 @@ struct newFavoritesPage: View {
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             GeometryReader { geoProx in
                 VStack{
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 20.0)
-                            .fill(.newBlue)
-                            .frame(width:geoProx.size.width, height:geoProx.size.height/5)
-                            .ignoresSafeArea()
-                        VStack{
-                            Spacer()
+                    VStack {
+                        HStack{
                             Text("Favorites")
                                 .foregroundColor(.white)
-                                .font(.custom("SF Pro", size: 40))
-                                .frame(maxWidth: .infinity,alignment: .bottomLeading)
-                                .padding(.leading, geoProx.size.width/12)
-                                .padding(.bottom, 25)
+                                .font(.largeTitle)
+                            Spacer()
                         }
-                        .frame(width:geoProx.size.width, height:geoProx.size.height/5)
+                        .padding(.top,geoProx.size.height/8)
+                        .padding(.leading,geoProx.size.width/12)
+                        .padding(.bottom, geoProx.size.height/30)
+                        .background(RoundedRectangle(cornerRadius: 20)
+                            .fill(CustomColor.newBlue)
+                        )
+                        .ignoresSafeArea()
+                        
                     }
                     VStack{
-                        NavigationStack {
-                            List {
-                                ForEach(savedRecipes) { recipe in
-                                    ZStack{
-                                        Image(pickSlimIcon(recipe.background))
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                        HStack{
-                                            Text(recipe.name)
-                                                .font(.custom("SF Pro", size: 25))
-                                            Spacer()
-                                            VStack {
-                                                Text(recipe.time)
-                                                Text("Min.")
-                                            }
-                                            .font(.custom("SF Pro", size: 15))
-                                        }
-                                        .frame(width: 320, height: 25)
-                                    }
+                        //                            NavigationStack {
+                        List {
+                            ForEach(savedRecipes) { recipe in
+                                NavigationLink{ 
+                                    newFavRecipeView(favRecipe: recipe)
                                 }
-                                .onDelete(perform: deleteRecipes)
-                                .foregroundColor(.white)
-                                .listRowSeparator(.hidden)
-                                .listRowBackground(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .fill(.clear)
-                                        .padding(7)
-                                        .shadow(color: .black.opacity(0.6),radius: 3)
-                                )
+                            label: {
+                                ZStack{
+                                    Image(pickSlimIcon(recipe.background))
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                    HStack{
+                                        Text(recipe.name)
+                                            .font(.custom("SF Pro", size: 25))
+                                        Spacer()
+                                        VStack {
+                                            Text(recipe.time)
+                                            Text("Min.")
+                                        }
+                                        .font(.custom("SF Pro", size: 15))
+                                    }
+                                    .frame(width: 320, height: 25)
+                                }
                             }
-                            .environment(\.defaultMinListRowHeight, 25)
-                            .scrollContentBackground(.hidden)
-                            .background(Image("foodBackground")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .edgesIgnoringSafeArea(.all))
-//                            .toolbar {
-//                                Button("Add", action: addSamples)
-//                            }
+                            }
+                            .onDelete(perform: deleteRecipes)
+                            .foregroundColor(.white)
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(.clear)
+                                    .padding(7)
+                                    .shadow(color: .black.opacity(0.6),radius: 3)
+                            )
                         }
+                        .environment(\.defaultMinListRowHeight, 25)
+                        .scrollContentBackground(.hidden)
+                        //                                .background(Image("foodBackground")
+                        //                                    .resizable()
+                        //                                    .aspectRatio(contentMode: .fill)
+                        //                                    .edgesIgnoringSafeArea(.all))
+                        //                            .toolbar {
+                        //                                Button("Add", action: addSamples)
+                        //                            }
+                        //                            }
                     }
                 }
             }
         }
     }
     
-//    func addSamples(){
-//        let recipe1 = Favorites(name: "Chicken", time: "15", ingredients: "Blah", instructions: "Blah", background: randomSlimIcon())
-//        let recipe2 = Favorites(name: "Steak", time: "20", ingredients: "Blah", instructions: "Blah", background: randomSlimIcon())
-//        let recipe3 = Favorites(name: "Sushi", time: "15", ingredients: "Blah", instructions: "Blah", background: randomSlimIcon())
-//        
-//        modelContext.insert(recipe1)
-//        modelContext.insert(recipe2)
-//        modelContext.insert(recipe3)
-//    }
+    //    func addSamples(){
+    //        let recipe1 = Favorites(name: "Chicken", time: "15", ingredients: "Blah", instructions: "Blah", background: randomSlimIcon())
+    //        let recipe2 = Favorites(name: "Steak", time: "20", ingredients: "Blah", instructions: "Blah", background: randomSlimIcon())
+    //        let recipe3 = Favorites(name: "Sushi", time: "15", ingredients: "Blah", instructions: "Blah", background: randomSlimIcon())
+    //
+    //        modelContext.insert(recipe1)
+    //        modelContext.insert(recipe2)
+    //        modelContext.insert(recipe3)
+    //    }
     
     func deleteRecipes(_ indexSet: IndexSet) {
         for index in indexSet {

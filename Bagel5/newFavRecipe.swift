@@ -10,28 +10,9 @@ import SwiftUI
 import SwiftData
 import CoreData
 
-let mess = "chicken eggs cheese"
-
-var arrayOfRecipes: [Favorites] = []
-
-struct newRecipeView: View {
+struct newFavRecipeView: View {
     
-    @State private var bookmarkTog = false
-    
-    @State private var id = UUID()
-    @State private var name: String = ""
-    @State private var time: String = ""
-    @State private var information: String = ""
-    @State private var ingredients: String = ""
-    @State private var instructions: String = ""
-    @State private var background: slimIcons = .cup
-    
-    var recipe: Favorites {
-        Favorites(id: id, name: name, time: time, information: information, ingredients: ingredients, instructions: instructions, background: background)
-    }
-    
-    @Environment(\.modelContext) var modelContext
-    @Query var savedRecipes: [Favorites]
+    let favRecipe: Favorites
     
     var body: some View {
             ZStack{
@@ -51,30 +32,13 @@ struct newRecipeView: View {
                                     Spacer(minLength: 20)
                                     HStack {
                                         Spacer()
-                                        Button(action: {
-                                            bookmarkTog.toggle()
-                                            if bookmarkTog{
-                                                modelContext.insert(recipe)
-                                            } else {
-                                                let id = recipe.id
-                                                try? modelContext.delete(model: Favorites.self, where: #Predicate<Favorites> { favorites in
-                                                    ( id == favorites.id)
-                                                })
-                                            }
-                                        }, label: {
-                                            Image(systemName: bookmarkTog ?  "heart.fill" : "heart")
-                                                .font(.largeTitle)
-                                                .frame(alignment: .trailing)
-                                                .padding()
-                                                .foregroundColor(.white)
-                                        })
                                     }
                                     .frame(height:geoProx.size.height/20)
                                     .padding(.top,15)
-                                    Text(recipe.name)
+                                    Text(favRecipe.name)
                                             .font(.largeTitle)
                                             .foregroundColor(.white)
-                                    Text("\(recipe.time)")
+                                    Text(favRecipe.time)
                                         .font(.title3)
                                             .foregroundColor(.white)
                                 }
@@ -102,7 +66,7 @@ struct newRecipeView: View {
                                     Text("Ingredients")
                                         .font(.title)
                                     Divider()
-                                    let components = recipe.ingredients.components(separatedBy: " ")
+                                    let components = favRecipe.ingredients.components(separatedBy: " ")
                                     HStack {
                                         ForEach(components, id: \.self) { ingre in
                                             Text(ingre)
@@ -123,7 +87,7 @@ struct newRecipeView: View {
                                         .font(.title)
                                         .padding([.leading, .top])
                                     Divider()
-                                    Text(recipe.instructions)
+                                    Text(favRecipe.instructions)
                                         .padding([.leading, .bottom, .trailing])
                                 }
                                 .foregroundColor(.white)
@@ -140,42 +104,10 @@ struct newRecipeView: View {
                     .ignoresSafeArea()
                 }
         }
-        .task {
-            do {
-                for index in 0...0 {
-                    let result = try await OpenAIService.shared.sendPromptToChatGPT(message: mess)
-                    let recipe = Favorites(name: result.recipe, time: result.timeToCook, information: result.description, ingredients: result.ingredients, instructions: result.instructions, background: randomSlimIcon())
-                    arrayOfRecipes.append(recipe)
-                    
-                    id =  recipe.id
-                    name = recipe.name
-                    time = recipe.time
-                    information = recipe.information
-                    ingredients = recipe.ingredients
-                    instructions = recipe.instructions
-                    background = recipe.background
-
-                    print(arrayOfRecipes[index])
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
     }
     
-//    func addRecipes() {
-//        let recipe = Favorites()
-//        modelContext.insert(recipe)
-//    }
-//    
-//    func deleteRecipes(_ indexSet: IndexSet) {
-//        for index in indexSet {
-//            let recipe = savedRecipes[index]
-//            modelContext.delete(recipe)
-//        }
-//    }
-    
 }
-#Preview {
-    newRecipeView()
-}
+
+//#Preview {
+//    newFavRecipeView()
+//}
