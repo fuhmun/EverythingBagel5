@@ -67,18 +67,20 @@ struct newFavRecipeView: View {
                                         .font(.title)
                                     Divider()
                                     let components = favRecipe.ingredients.components(separatedBy: " ")
-                                    HStack {
-                                        ForEach(components, id: \.self) { ingre in
-                                            Text(ingre)
-                                                .multilineTextAlignment(.leading)
-                                                .padding(10)
-                                                .overlay(
-                                                    RoundedRectangle(cornerRadius: 10)
-                                                        .stroke(CustomColor.newRed, lineWidth: 2)
-                                                )
+                                    ScrollView(.horizontal){
+                                        HStack {
+                                            ForEach(components, id: \.self) { ingre in
+                                                Text(ingre)
+                                                    .multilineTextAlignment(.leading)
+                                                    .padding(10)
+                                                    .overlay(
+                                                        RoundedRectangle(cornerRadius: 10)
+                                                            .stroke(CustomColor.newRed, lineWidth: 2)
+                                                    )
+                                            }
+                                            .background(.white)
+                                            .cornerRadius(10)
                                         }
-                                        .background(.white)
-                                        .cornerRadius(10)
                                     }
                                 }
                                 Spacer()
@@ -104,6 +106,7 @@ struct newFavRecipeView: View {
                     .ignoresSafeArea()
                 }
         }
+            .toolbarBackground(.newBlue)
     }
     
 }

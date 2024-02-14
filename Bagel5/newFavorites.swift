@@ -105,7 +105,7 @@ struct newFavoritesPage: View {
                                         Spacer()
                                         VStack {
                                             Text(recipe.time)
-                                            Text("Min.")
+//                                            Text("Min.")
                                         }
                                         .font(.custom("SF Pro", size: 15))
                                     }
