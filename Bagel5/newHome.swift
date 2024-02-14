@@ -8,6 +8,47 @@ import Foundation
 import SwiftUI
 import SwiftData
 
+enum bigIcons: String, Codable {
+    case cake
+    case carrot
+    case utensil
+    case cup
+    case wine
+}
+
+func randomBigIcon()->bigIcons {
+    let x = Int.random(in: 1...5)
+    switch x {
+    case 1:
+        return .cake
+    case 2:
+        return .carrot
+    case 3:
+        return .wine
+    case 4:
+        return .cup
+    default:
+        return .utensil
+    }
+}
+
+func pickBigIcon(_ icon: bigIcons) -> String {
+    
+    switch icon {
+    case .cake:
+        return "bigCakeBG"
+    case .carrot:
+        return "bigCarrotBG"
+    case .utensil:
+        return "bigUtensilBG"
+    case .cup:
+        return "bigCupBG"
+    case .wine:
+        return "bigWineBG"
+    }
+    
+}
+
 struct newHome: View {
     
     @State private var search: String = ""
@@ -24,18 +65,19 @@ struct newHome: View {
     
     var body: some View {
         NavigationStack{
-            ZStack{
-                Image(.foodBackground)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                GeometryReader { geoProx in
+            GeometryReader { geoProx in
+                ZStack{
+                    Image(.foodBackground)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                     VStack {
                         ZStack {
                             UnevenRoundedRectangle(cornerRadii: .init(bottomLeading: 20, bottomTrailing: 20))
                                 .fill(Color.newBlue)
-                                .frame(width:395, height: 479)
+                                .frame(width: geoProx.size.width/1, height: geoProx.size.height/1.6)
                                 .ignoresSafeArea()
+                                .shadow(color: .black.opacity(0.5), radius: 10)
                             VStack{
                                 HStack{
                                     Text("SwiftPantry")
@@ -53,6 +95,7 @@ struct newHome: View {
                                             .padding(.trailing, 35)
                                     }
                                 }
+                                .padding(.top, geoProx.size.height/18)
                                 TextField("Type in the ingredients you have here!", text: $search)
                                     .multilineTextAlignment(.center)
                                     .fontWeight(.bold)
@@ -96,6 +139,8 @@ struct newHome: View {
                                             )
                                         }
                                     }
+//                                    TagListView(tags: savedIngredients)
+//                                        .frame(width: 316, height: 199)
                                 }
                                 Button{
                                     var ingredientsArray: [String] = []
@@ -112,6 +157,7 @@ struct newHome: View {
                                         } catch {
                                             print(error.localizedDescription)
                                             isRecipeHidden = true
+                                            generatedRecipe = Recipes(name: "", time: "", ingredients: "", instructions: "")
                                         }
                                     }
                                     isRecipeHidden = false
@@ -136,31 +182,40 @@ struct newHome: View {
                                 )
                         } else {
                             NavigationLink{
-                                newRecipeView(recipeInfo: generatedRecipe)
+                                newRecipeView(recipeInfo: generatedRecipe, name2: generatedRecipe.name, time2: generatedRecipe.time, ingredients2: generatedRecipe.ingredients, instructions2: generatedRecipe.instructions)
                             } label: {
                                 ZStack{
-                                    Image("bigCupBG")
+                                    Image(pickBigIcon(randomBigIcon()))
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(width: geoProx.size.width/1.5, height: geoProx.size.height/5)
+                                        .frame(width: geoProx.size.width/1.25, height: geoProx.size.height/4.5)
+                                        .shadow(color: .black.opacity(0.5), radius: 10)
                                     VStack{
+                                        Spacer()
                                         HStack{
                                             Text(generatedRecipe.name)
+                                                .font(.title)
+                                            Spacer()
                                         }
+                                        Spacer()
                                         HStack{
+                                            Spacer()
                                             Text(generatedRecipe.time)
                                         }
+                                        Spacer()
                                     }
                                 }
+                                .frame(width: geoProx.size.width/1.25, height: geoProx.size.height/4.5)
                             }
                         }
                         Spacer()
                         Spacer()
                     }
                 }
+                .ignoresSafeArea()
             }
+            .ignoresSafeArea(.keyboard, edges: .bottom)
         }
-        .ignoresSafeArea(.keyboard)
     }
 }
 
